@@ -1,0 +1,530 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.portfolio {
+  min-height: 100vh;
+  background: #000;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  position: fixed;
+  top: 13px;
+
+  height: 48px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  padding: 0 14px;
+
+  background: rgba(12, 12, 12, 0.92);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.025);
+
+  z-index: 100;
+
+  backdrop-filter: blur(12px);
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+  width: fit-content;
+
+  font-size: 24px;
+  font-weight: 800;
+
+  color: #c34be8;
+
+  letter-spacing: -0.5px;
+}
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  gap: 7px;
+
+  flex: 1;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 7px 11px;
+
+  color: #d2d2d2;
+
+  font-size: 11px;
+  font-weight: 400;
+
+  text-decoration: none;
+
+  border-radius: 6px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-link.active {
+  color: #fff;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.icon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* =========================================
+   NAV ACTIONS
+========================================= */
+
+.nav-actions {
+  width: 220px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.theme-btn,
+.palette-btn {
+  border: none;
+  background: transparent;
+
+  padding: 0;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.theme-btn {
+  color: #55b9ff;
+}
+
+.palette-btn {
+  color: #a648ff;
+}
+
+.theme-btn:hover,
+.palette-btn:hover {
+  transform: scale(1.15);
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #050505;
+}
+
+/* =========================================
+   BACKGROUND GLOWS
+========================================= */
+
+.glow {
+  position: absolute;
+
+  width: 390px;
+  height: 390px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+
+  opacity: 0.42;
+}
+
+.glow-purple {
+  left: 23%;
+  top: 23%;
+
+  background: #5f16a4;
+}
+
+.glow-red {
+  right: 24%;
+  top: 29%;
+
+  background: #681c30;
+}
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 900px;
+
+  padding: 100px 20px 80px;
+
+  text-align: center;
+}
+
+/* =========================================
+   MAIN TITLE
+========================================= */
+
+.hero h1 {
+  margin: 0;
+
+  font-size: clamp(48px, 7vw, 68px);
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #a742ef 0%, #c24be8 45%, #e44770 100%);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================================
+   SECOND HEADING
+========================================= */
+
+.hero h2 {
+  margin: 13px 0 0;
+
+  color: #f5f5f5;
+
+  font-size: clamp(38px, 5.5vw, 55px);
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: -2.5px;
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-description {
+  margin: 18px 0 0;
+
+  color: #898989;
+
+  font-size: 17px;
+
+  font-weight: 400;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-buttons {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 26px;
+}
+
+.btn {
+  height: 29px;
+
+  min-width: 126px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 0 18px;
+
+  border-radius: 5px;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+/* Primary button */
+
+.btn-primary {
+  color: #fff;
+
+  background: linear-gradient(135deg, #a735f5, #8d32dd);
+
+  box-shadow: 0 0 20px rgba(151, 52, 239, 0.18);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 7px 25px rgba(151, 52, 239, 0.32);
+}
+
+.btn-primary span {
+  font-size: 13px;
+}
+
+/* Secondary button */
+
+.btn-secondary {
+  color: #fff;
+
+  border: 1px solid #9436df;
+
+  background: rgba(126, 37, 194, 0.25);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+
+  background: rgba(126, 37, 194, 0.4);
+}
+
+/* =========================================
+   SCROLL BUTTON
+========================================= */
+
+.scroll-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 43px;
+
+  padding: 5px 12px;
+
+  color: #6e6e6e;
+
+  border: 1px solid #242424;
+
+  border-radius: 20px;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  background: rgba(0, 0, 0, 0.35);
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.scroll-button:hover {
+  color: #aaa;
+
+  border-color: #444;
+}
+
+.scroll-button .arrow {
+  font-size: 15px;
+
+  animation: bounce 1.8s infinite;
+}
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.dummy-section {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #050505;
+
+  border-top: 1px solid #111;
+}
+
+.dummy-section h2 {
+  font-size: 50px;
+
+  color: #fff;
+}
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+  .logo {
+    width: auto;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+    width: auto;
+  }
+
+  .hero-content {
+    padding-top: 120px;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero h2 {
+    letter-spacing: -1.5px;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    left: 8px;
+    right: 8px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .hero h2 {
+    font-size: 35px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 150px;
+  }
+
+  .glow {
+    width: 250px;
+    height: 250px;
+  }
+}
+#about {
+  padding: 14px;
+  gap: 32px;
+}
+#projects {
+  gap: 32px;
+  padding: 14px;
+}
+
+#projects a {
+  color: white;
+}
+#contact {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 32px;
+}
